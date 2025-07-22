@@ -1,0 +1,12 @@
+{
+    "_": "types.UpdateBotDeleteBusinessMessage",
+    "connection_id": "OcYOiU_l0FEoBQAADEcHNEphWlw",
+    "peer": {
+        "_": "types.PeerUser",
+        "user_id": 7527287627
+    },
+    "messages": [
+        37919
+    ],
+    "qts": 568204621
+}

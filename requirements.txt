@@ -1,0 +1,6 @@
+asyncio
+aiokafka
+kurigram
+tgcrypto
+pymongo~=4.13.0
+dotenv

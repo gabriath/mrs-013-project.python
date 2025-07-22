@@ -1,0 +1,83 @@
+{
+    "_": "BusinessConnection",
+    "id": "0Bi51xzMIFMvAwAAGzWAqwk0ZSo",
+    "user": {
+        "_": "User",
+        "id": 6387835622,
+        "is_self": false,
+        "is_contact": false,
+        "is_mutual_contact": false,
+        "is_deleted": false,
+        "is_bot": false,
+        "is_restricted": false,
+        "is_support": false,
+        "is_premium": true,
+        "is_contact_require_premium": false,
+        "is_close_friend": false,
+        "is_stories_hidden": false,
+        "is_stories_unavailable": true,
+        "is_business_bot": false,
+        "verification_status": {
+            "_": "VerificationStatus",
+            "is_verified": false,
+            "is_scam": false,
+            "is_fake": false
+        },
+        "is_min": false,
+        "first_name": "Gandalf",
+        "status": "UserStatus.RECENTLY",
+        "username": "deasnetwork",
+        "language_code": "ru",
+        "emoji_status": {
+            "_": "EmojiStatus",
+            "custom_emoji_id": 5413850145403979151
+        },
+        "dc_id": 4,
+        "photo": {
+            "_": "ChatPhoto",
+            "small_file_id": "AQADBAADbL0xG6xOeFIAEAIAA-aivnwBAAPU_e6VQ_KfNQAEHgQ",
+            "small_photo_unique_id": "AgADbL0xG6xOeFI",
+            "big_file_id": "AQADBAADbL0xG6xOeFIAEAMAA-aivnwBAAPU_e6VQ_KfNQAEHgQ",
+            "big_photo_unique_id": "AgADbL0xG6xOeFI",
+            "has_animation": false,
+            "is_personal": false
+        },
+        "reply_color": {
+            "_": "ChatColor",
+            "color": "ReplyColor.BLUE_DARK_BLUE",
+            "background_emoji_id": 5280818098960611598
+        },
+        "profile_color": {
+            "_": "ChatColor",
+            "color": "ProfileColor.GRAY",
+            "background_emoji_id": 5258332798409783582
+        },
+        "added_to_attachment_menu": false,
+        "inline_need_location": false,
+        "can_be_edited": false,
+        "can_be_added_to_attachment_menu": false,
+        "can_join_groups": false,
+        "can_read_all_group_messages": false,
+        "has_main_web_app": false
+    },
+    "dc_id": 4,
+    "date": "2025-07-01 18:10:37",
+    "is_enabled": true,
+    "rights": {
+        "_": "BusinessBotRights",
+        "can_reply": true,
+        "can_read_messages": false,
+        "can_delete_sent_messages": false,
+        "can_delete_all_messages": false,
+        "can_edit_name": false,
+        "can_edit_bio": false,
+        "can_edit_profile_photo": false,
+        "can_edit_username": false,
+        "can_view_gifts": false,
+        "can_sell_gifts": false,
+        "can_change_gift_settings": false,
+        "can_transfer_and_upgrade_gifts": false,
+        "can_transfer_stars": false,
+        "can_manage_stories": false
+    }
+}

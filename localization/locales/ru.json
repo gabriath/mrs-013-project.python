@@ -1,0 +1,16 @@
+{
+  "start": "Добро пожаловать!\n\uD83D\uDD75\uFE0F\u200D <b>Этот бот создан, чтобы помогать вам в переписке.</b>\n\n<em>Возможности бота:\n<b>\u00b7</b> Моментально пришлет уведомление, если ваш собеседник изменит или удалит сообщение \ud83d\udd14\n<b>\u00b7</b> Умеет скачивать файлы с таймером, такие как: фото/видео/голосовые/кружки \u23f3</em>\n\n\n<blockquote>Чтобы начать пользоваться ботом, вам необходимо зарегистрироваться. Пришлите мне свой номер телефона, для этого нажмите на кнопку ниже:</blockquote>",
+  "request_contact": "Отправить контакт \u260e\ufe0f",
+  "premium_required": "\uD83D\uDD75\uFE0F\u200D Добро пожаловать! Чтобы начать пользоваться ботом вам необходимо приобрести подписку Telegram Premium.\n\nЧтобы сделать это вы можете воспользоваться ботом @PremiumBot",
+  "service_working": "Я в полном порядке, работаем \ud83e\udee1\n\nЕсли вам требуется дополнительная помощь, отправьте команду /help",
+  "business_connection_required": "Бот не подключен, чтобы пользоваться ботом — подключите его.\n\n<blockquote>\u2753 Как подключить бота — смотрите на картинке вверху \uD83D\uDC46</blockquote>",
+  "phone_number_received": "Отлично, вы зарегистрированы! \nТеперь необходимо подключить бота. \n\n<blockquote>\u2753 Как подключить бота — смотрите на картинке вверху \ud83d\udc46</blockquote>",
+  "business_connection_received": "Отлично, бот подключен и готов к работе \uD83E\uDEE1\n\nЕсли вам требуется дополнительная помощь, отправьте команду /help",
+  "demonstration": "<b>Демонстрация работы бота</b>\n\n<b>Видео 1: </b>Скачивание медиа с таймером\n<b>Видео 2: </b>Уведомление об изменении сообщения собеседником\n<b>Видео 3:</b> Уведомление об удалении сообщения собеседником\n\n<b>Бот работает даже когда вы оффлайн!</b>",
+  "text_message_was_deleted": "<a href='tg://openmessage?user_id={user_id}'>{name}</a> удалил сообщение:\n\n<blockquote>{message}</blockquote>",
+  "media_message_was_deleted": "<a href='tg://openmessage?user_id={user_id}'>{name}</a> удалил сообщение\n\nОписание: <blockquote>{caption}</blockquote>",
+  "video_note_was_deleted": "<a href='tg://openmessage?user_id={user_id}'>{name}</a> удалил сообщение",
+  "text_message_was_edited": "<a href='tg://openmessage?user_id={user_id}'>{name}</a> изменил сообщение\n\nOld:\n<blockquote>{old_message}</blockquote>\nNew:\n<blockquote>{new_message}</blockquote>",
+  "one_time_media_received": "<a href='tg://openmessage?user_id={user_id}'>{name}</a> прислал одноразовое сообщение",
+  "media_caption": "\n\nОписание: <blockquote>{caption}</blockquote>"
+}

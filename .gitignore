@@ -1,0 +1,8 @@
+.env
+.venv
+.keystore
+json
+
+
+*.session
+*.session-journal
