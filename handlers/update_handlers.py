@@ -382,8 +382,6 @@ class UpdateHandlers:
         try:
             to_user = self.user_repository.get_user_by_business_connection_id(update.connection_id)
             peer_user = self.user_repository.get_user_by_id(update.message.peer_id.user_id)
-            print(to_user)
-            print(peer_user)
 
             if not to_user or not peer_user or to_user == peer_user:
                 return
