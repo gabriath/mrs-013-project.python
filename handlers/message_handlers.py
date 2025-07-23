@@ -132,8 +132,8 @@ class MessageHandlers:
                     sender
                 )
 
+    @staticmethod
     def _should_forward_media(
-            self,
             media: Optional[Any],
             user: Dict[str, Any],
             message: Message
@@ -149,8 +149,9 @@ class MessageHandlers:
         Returns:
             bool: True if media should be forwarded
         """
-        return (media and hasattr(media, 'ttl_seconds')
-                and user.get("_id") != message.from_user.id)
+        if media is not None:
+            return media.ttl_seconds and user.get("_id") != message.from_user.id
+        return False
 
     async def _forward_ttl_media(
             self,
