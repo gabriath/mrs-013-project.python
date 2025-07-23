@@ -1,5 +1,6 @@
 import logging
 from typing import Any, Dict, Optional
+
 from pyrogram import Client
 from pyrogram.raw.base import Update
 from pyrogram.raw.types import UpdateBotDeleteBusinessMessage, UpdateBotEditBusinessMessage
@@ -196,8 +197,8 @@ class UpdateHandlers:
             text
         )
 
+    @staticmethod
     def _get_message_handler_config(
-            self,
             message_type: str,
             content: str
     ) -> Optional[Dict[str, Any]]:
@@ -317,8 +318,8 @@ class UpdateHandlers:
                 args["text"] = text
             await method(chat_id, **args)
 
+    @staticmethod
     async def _handle_video_note_deletion(
-            self,
             client: Client,
             chat_id: int,
             text: str,
@@ -332,8 +333,8 @@ class UpdateHandlers:
             reply_parameters=ReplyParameters(message_id=sent_message.id)
         )
 
+    @staticmethod
     async def _handle_sticker_deletion(
-            self,
             client: Client,
             chat_id: int,
             text: str,
@@ -347,8 +348,8 @@ class UpdateHandlers:
             reply_parameters=ReplyParameters(message_id=sent_message.id)
         )
 
+    @staticmethod
     async def _handle_animation_deletion(
-            self,
             client: Client,
             chat_id: int,
             text: str,
@@ -379,9 +380,7 @@ class UpdateHandlers:
             chats: Dictionary of chat information
         """
         try:
-            to_user = self.user_repository.get_user_by_business_connection_id(
-                update.connection_id
-            )
+            to_user = self.user_repository.get_user_by_business_connection_id(update.connection_id)
             peer_user = self.user_repository.get_user_by_id(update.message.peer_id.user_id)
 
             if not to_user or not peer_user or to_user == peer_user:
@@ -393,6 +392,8 @@ class UpdateHandlers:
                 update.message.id
             )
             message = self.message_repository.get_message_by_id(message_id)
+            if message.get("type") != 'TEXT_MESSAGE':
+                return
 
             displayed_name = get_user_displayed_name(
                 peer_user.get("first_name"),
