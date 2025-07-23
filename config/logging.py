@@ -13,4 +13,5 @@ def setup_logging():
         datefmt="%Y-%m-%d %H:%M:%S",
         handlers=[logging.StreamHandler()]
     )
+    logging.getLogger("pyrogram").setLevel(logging.ERROR)
     logging.getLogger().addFilter(ModuleFilter())

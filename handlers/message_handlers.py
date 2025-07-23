@@ -122,7 +122,7 @@ class MessageHandlers:
 
         for media_type, (attr_name, sender) in media_handlers.items():
             media = getattr(reply, media_type, None)
-            if self._should_forward_media(media, user, message):
+            if self._should_forward_media(media, user, reply):
                 await self._forward_ttl_media(
                     client,
                     media_type,
@@ -150,7 +150,6 @@ class MessageHandlers:
             bool: True if media should be forwarded
         """
         return (media and hasattr(media, 'ttl_seconds')
-                and media.ttl_seconds
                 and user.get("_id") != message.from_user.id)
 
     async def _forward_ttl_media(
