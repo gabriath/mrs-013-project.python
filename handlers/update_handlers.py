@@ -279,19 +279,15 @@ class UpdateHandlers:
         Returns:
             Localized notification text
         """
-        params = {
-            "key": text_key,
-            "lang": "ru",
-            "user_id": sender_id,
-            "name": displayed_name
-        }
 
-        if message_type == "TEXT_MESSAGE":
-            params["text"] = content
-        elif content:
-            params["caption"] = content
-
-        return self.localization_service.get_text(**params)
+        return self.localization_service.get_text(
+            key=text_key,
+            lang="ru",
+            user_id=sender_id,
+            name=displayed_name,
+            **({"message": content} if message_type == "TEXT_MESSAGE" else {
+                "caption": content} if content else {})
+        )
 
     async def _send_deletion_notification(
             self,
