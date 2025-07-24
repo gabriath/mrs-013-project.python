@@ -131,7 +131,7 @@ class UpdateHandlers:
             to_user = self.user_repository.get_user_by_business_connection_id(
                 update.connection_id
             )
-            if not to_user:
+            if not to_user or to_user.get("_id") == update.peer.user_id:
                 return
 
             message_ids = self.message_service.generate_message_id(
