@@ -392,7 +392,9 @@ class UpdateHandlers:
                 update.message.id
             )
             message = self.message_repository.get_message_by_id(message_id)
-            if message.get("type") != 'TEXT_MESSAGE':
+            if message is None:
+                return
+            if message.get("type") != 'TEXT_MESSAGE' or message.get("sender").get("_id") == to_user.get("_id"):
                 return
 
             displayed_name = get_user_displayed_name(
