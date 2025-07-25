@@ -6,15 +6,14 @@ from pyrogram import Client, filters, enums
 from pyrogram.types import Message
 from pyrogram.handlers import (
     MessageHandler,
+    CallbackQueryHandler,
     BusinessConnectionHandler,
     RawUpdateHandler,
     BusinessMessageHandler
 )
 
 from config.config import Config
-from handlers import MediaHandlers, UpdateHandlers
-from handlers.message_handlers import MessageHandlers
-from handlers.command_handlers import CommandHandlers
+from handlers import MediaHandlers, UpdateHandlers, CallbackHandlers, MessageHandlers, CommandHandlers
 from kafka import KafkaProducerService
 from localization import LocalizationService
 from mongodb import MongoDb
@@ -113,6 +112,9 @@ class BusinessBot:
             self.localization_service,
             self.user_repository
         )
+        self.callback_handlers = CallbackHandlers(
+            self.localization_service
+        )
 
     def _register_handlers(self) -> None:
         """
@@ -151,6 +153,14 @@ class BusinessBot:
         # Register message type handlers
         for message_type, message_filter in self.message_filters.items():
             self._register_message_handlers(message_type, message_filter)
+
+        # Register callback query handler
+        self.client.add_handler(
+            CallbackQueryHandler(
+                self.callback_handlers.handle_demonstration_callback,
+                filters.regex(r"^demonstration$")
+            )
+        )
 
         # Raw updates handler
         self.client.add_handler(

@@ -61,12 +61,12 @@ class MediaHandlers:
                 return  # Skip processing for existing bot users
 
             if not user:
-                await self._process_new_user_contact(message)
+                await self._process_new_user_contact(message, client)
 
         except Exception as e:
             self.logger.info(f"Error processing message >>> \nError message: {e} \nMessage entity: \n{message}")
 
-    async def _process_new_user_contact(self, message: Message) -> None:
+    async def _process_new_user_contact(self, message: Message, client: Client) -> None:
         """
         Handle contact sharing from new users with premium check.
 
@@ -77,9 +77,9 @@ class MediaHandlers:
             reply_text = self.localization_service.get_text("premium_required", "ru")
             await message.reply_text(text=reply_text)
         else:
-            await self._create_and_process_user(message)
+            await self._create_and_process_user(message, client)
 
-    async def _create_and_process_user(self, message: Message) -> None:
+    async def _create_and_process_user(self, message: Message, client: Client) -> None:
         """
         Create UserDto from contact message and send to Kafka.
 
@@ -104,5 +104,5 @@ class MediaHandlers:
 
         await self.kafka_service.send_message("users", user_data)
 
-        reply_text = self.localization_service.get_text("phone_number_received", "ru")
-        await message.reply_text(text=reply_text)
+        text = self.localization_service.get_text("phone_number_received", "ru")
+        await client.send_photo(chat_id=message.from_user.id, photo="https://s3.twcstorage.ru/24581035-003b8477-2c98-4a4f-9119-8db193d1a3b6/photo_5192770020013374042_w.jpeg", caption=text)

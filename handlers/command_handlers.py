@@ -1,7 +1,7 @@
 import logging
 
 from pyrogram import Client
-from pyrogram.types import Message, ReplyKeyboardMarkup, KeyboardButton
+from pyrogram.types import Message, ReplyKeyboardMarkup, KeyboardButton, InlineKeyboardMarkup, InlineKeyboardButton
 from typing import Optional, Dict, Any
 
 from localization import LocalizationService
@@ -69,7 +69,12 @@ class CommandHandlers:
         else:
             reply_text = self.localization_service.get_text("business_connection_required", "ru")
 
-        await message.reply_text(text=reply_text)
+        demonstartion_button_text = self.localization_service.get_text("demonstartion_button", "ru")
+        keyboard = InlineKeyboardMarkup(
+            [[InlineKeyboardButton(text=demonstartion_button_text, callback_data="demonstration")]]
+        )
+
+        await message.reply_text(text=reply_text, reply_markup=keyboard)
 
     async def _handle_new_user(self, message: Message) -> None:
         """

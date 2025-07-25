@@ -6,6 +6,7 @@
   "business_connection_required": "Бот не подключен, чтобы пользоваться ботом — подключите его.\n\n<blockquote>\u2753 Как подключить бота — смотрите на картинке вверху \uD83D\uDC46</blockquote>",
   "phone_number_received": "Отлично, вы зарегистрированы! \nТеперь необходимо подключить бота. \n\n<blockquote>\u2753 Как подключить бота — смотрите на картинке вверху \ud83d\udc46</blockquote>",
   "business_connection_received": "Отлично, бот подключен и готов к работе \uD83E\uDEE1\n\nЕсли вам требуется дополнительная помощь, отправьте команду /help",
+  "demonstartion_button": "\uD83C\uDFA6 Демонстрация работы бота",
   "demonstration": "<b>Демонстрация работы бота</b>\n\n<b>Видео 1: </b>Скачивание медиа с таймером\n<b>Видео 2: </b>Уведомление об изменении сообщения собеседником\n<b>Видео 3:</b> Уведомление об удалении сообщения собеседником\n\n<b>Бот работает даже когда вы оффлайн!</b>",
   "text_message_was_deleted": "<a href='tg://openmessage?user_id={user_id}'>{name}</a> удалил сообщение:\n\n<blockquote>{message}</blockquote>",
   "media_message_was_deleted": "<a href='tg://openmessage?user_id={user_id}'>{name}</a> удалил сообщение\n\nОписание: <blockquote>{caption}</blockquote>",
